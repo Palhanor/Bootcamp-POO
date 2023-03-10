@@ -2,17 +2,16 @@ package components;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
-    private String nome;
-    private String descricao;
+    private final String nome;
+    private final String descricao;
     private final LocalDate dataInicial = LocalDate.now();
     private final LocalDate dataFinal = dataInicial.plusDays(45);
-    private Set<Dev> devsInscrito = new HashSet<>();
-    private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private final Set<Dev> devsInscrito = new HashSet<>();
+    private final Set<Conteudo> conteudos;
 
     public Bootcamp(String nome, String descricao, Set<Conteudo> conteudos) {
         this.nome = nome;
@@ -20,44 +19,12 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public LocalDate getDataInicial() {
-        return dataInicial;
-    }
-
-    public LocalDate getDataFinal() {
-        return dataFinal;
-    }
-
     public Set<Dev> getDevsInscrito() {
         return devsInscrito;
     }
 
-    public void setDevsInscrito(Set<Dev> devsInscrito) {
-        this.devsInscrito = devsInscrito;
-    }
-
     public Set<Conteudo> getConteudos() {
         return conteudos;
-    }
-
-    public void setConteudos(Set<Conteudo> conteudos) {
-        this.conteudos = conteudos;
     }
 
     @Override
